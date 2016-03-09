@@ -1,0 +1,122 @@
+<div class="col-md-3"></div>
+
+<div id="iphone" class="col-md-3">
+  
+  <!-- All Contacts Header -->
+  <div class="row">
+  <div class="col-md-9">
+    <p id="contact-screen-title" class="right"><strong>All Contacts</strong></p>
+    </div>
+    <div class="col-md-3">
+    <i id="add-contact" class="blue zmdi zmdi-plus zmdi-hc-lg"></i>
+    </div>
+  </div>
+  
+  <!-- Search -->
+  <div class="form-group">
+    <div id="phone-form">
+      <form action="/search" id="searchForm" autocomplete="off">
+        <input type="text" class="form-control" name="last_name" placeholder="&#xF002; Search" style="font-family:Arial, FontAwesome">
+      </form>
+    </div>
+  </div>
+
+  
+  
+  <!-- Contact List -->
+  <div id="contact-results">
+
+    <div id="search-results-area">
+      <thead><p class="table-header">Results</p></thead>
+    </div>
+
+    <table id="results" class="table table-condensed">
+      <div id="search-results">
+        <!-- Search results will populate here -->
+      </div>
+      <thead><p id="all_contacts" class="table-header">Contacts</p></thead>
+      <tbody>
+          <!-- Contact will populate here -->
+      </tbody>
+    </table>
+  </div>
+  
+  <!-- This is the Home Screen -->
+  <div id="home-screen"></div>
+  
+  <!-- Button -->
+  <div id="phone-button"></div>
+
+  <!-- Touch to Unlock -->
+  <p id="touch-unlock" class="center glow">tap to unlock</p>
+  
+</div>
+
+
+
+
+<div class="col-md-3">
+  <div id="main-title">
+    <h1>THE<br><span class="yellow-btn-lg">CONTACT</span><br>APP</h1>
+  </div>
+  <div class="add-contact-form">
+    <form action="/new" id="new_contact" autocomplete="off">
+      <div class="form-group">
+        <label for="exampleInputEmail1">First Name</label>
+        <input type="text" class="form-control" name="first_name" placeholder="First Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Last Name</label>
+        <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Company</label>
+        <input type="text" class="form-control" name="company" placeholder="Company">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Email</label>
+        <input type="email" class="form-control" name="email" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Mobile</label>
+        <input type="text" class="form-control" name="phone" placeholder="Mobile">
+      </div>
+      <input type="submit" value="Add Contact" class="yellow-btn">
+    </form>
+  </div>
+</div>
+
+
+
+
+<!-- New Contact willl appear here onces added -->
+<div id="contact_saved" class="new-contact-confirm col-md-3"></div>
+   
+
+
+
+
+
+
+
+<!-- Button trigger modal -->
+<button id="modal" class="hidden" data-toggle="modal" data-target="#myModal">
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Contact</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <input type="button" value="Close" class="yellow-btn" data-dismiss="modal">
+      </div>
+    </div>
+  </div>
+</div>
