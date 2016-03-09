@@ -1,7 +1,6 @@
+# 20.times do
 # @first_3 = rand(200...800)
 # @last_4 = rand(1000...9999)
-
-# 2.times do
 # Contact.create(
 #   photo: Faker::Avatar.image,
 #   first_name: Faker::Name.first_name,

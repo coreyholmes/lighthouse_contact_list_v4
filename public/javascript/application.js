@@ -4,6 +4,9 @@
     // ------------ EXTRAS ------------
     // --------------------------------
 
+    // Hide Contact Screen Page
+    // $('#contact-screen').hide();
+
     // Modal
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').focus()
@@ -15,6 +18,13 @@
       $(".add-contact-form").slideToggle(500);
     });
 
+    // 'All Contacts' Button in View Contacts. (Returns you to all Contacts)
+    $("#view-all-contacts").on('click', function() {
+      $('#contact-screen-name').empty();
+      $('#contact-screen-phone').empty();
+      $("#screen").slideToggle(500);
+    });
+
     // $(".yellow-btn-lg").on('click', function() {
     //   $('#main-title').slideToggle(500);
     //   $(".add-contact-form").slideToggle(500);
@@ -22,6 +32,7 @@
 
     $("#phone-button").on('click', function() {
       $("#home-screen").slideToggle(500);
+      $("#screen").slideToggle(500);
       $("#touch-unlock").slideToggle(500);
     });
 
@@ -88,11 +99,16 @@
       for ( var i in data ) {
       var tr = $("<tr>").appendTo(table);
       var full_name = data[i].first_name + " " + "<b>" + data[i].last_name + "</b>";
-      $('<td>').html(full_name).appendTo(tr);
+      var name = data[i].first_name + " " + data[i].last_name;
+      var phone = data[i].phone;
+      $('<td>').html(full_name).data('name', name).appendTo(tr);
+      $('<td>').html(phone).data('phone', phone).appendTo(tr).hide();
       }
       $('tr').on('click', function() {
-      // alert($(this).text());
-      $('#modal').trigger( "click" );
+      $('#screen').slideToggle(500);
+
+      $('#contact-screen-name').text( $(this).find(':nth-child(1)').data('name') );
+      $('#contact-screen-phone').text( $(this).find(':nth-child(2)').data('phone') );
       })
     }
 
